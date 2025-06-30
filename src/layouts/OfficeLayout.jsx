@@ -1,6 +1,6 @@
 // src/layouts/StudentLayout.jsx
 import OfficeHeader from '../components/OfficeHeader';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 
 function OfficeLayout({ children }) {
   return (

@@ -1,6 +1,6 @@
 // src/layouts/StudentLayout.jsx
 import StudentHeader from '../components/StudentHeader';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 
 function StudentLayout({ children }) {
   return (

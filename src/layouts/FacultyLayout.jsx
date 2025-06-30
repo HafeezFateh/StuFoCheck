@@ -1,6 +1,6 @@
 // src/layouts/StudentLayout.jsx
 import FacultyHeader from '../components/FacultyHeader';
-import Footer from '../components/footer';
+import Footer from '../components/Footer';
 
 function FacultyLayout({ children }) {
   return (
