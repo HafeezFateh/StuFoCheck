@@ -6,7 +6,7 @@ function StudentPage(){
     return (
         <>
         <StudentLayout>
-            <StudentProfile/>
+            <StudentProfile />
         </StudentLayout>
       
         </>

@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './output.css';
 
+// Components
+import ProtectedRoute from './components/ProtectedRoute';
+
 // Home
 import HomePage from './pages/HomePage';
 
@@ -9,12 +12,14 @@ import StudentPage from './pages/Student/StudentPage';
 import StudentFaculties from './pages/Student/StudentFaculties';
 import StudentUpdates from './pages/Student/StudentUpdates';
 import StudentFee from './pages/Student/StudentFee';
+import StudentAuth from './pages/StudentAuth';
 
 // Faculty Pages
 import FacultyPage from './pages/Faculty/FacultyPage';
 import FacultyStudents from './pages/Faculty/FacultyStudents';
 import FacultyUpdates from './pages/Faculty/FacultyUpdates';
 import FacultyTimeTable from './pages/Faculty/FacultyTimeTable';
+import FacultyAuth from './pages/FacultyAuth';
 
 // Office Pages
 import OfficePage from './pages/Office/OfficePage';
@@ -31,31 +36,84 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Home */}
+        {/* Public Routes */}
         <Route path="/" element={<HomePage />} />
+        <Route path="/student/auth" element={<StudentAuth />} />
+        <Route path="/faculty/auth" element={<FacultyAuth />} />
 
-        {/* Student Section */}
-        <Route path="/student" element={<StudentPage />} />
-        <Route path="/student/faculties" element={<StudentFaculties />} />
-        <Route path="/student/news" element={<StudentUpdates />} />
-        <Route path="/student/fees" element={<StudentFee />} />
+        {/* Protected Student Routes */}
+        <Route
+          path="/student"
+          element={<ProtectedRoute><StudentPage /></ProtectedRoute>}
+        />
+        <Route
+          path="/student/faculties"
+          element={<ProtectedRoute><StudentFaculties /></ProtectedRoute>}
+        />
+        <Route
+          path="/student/news"
+          element={<ProtectedRoute><StudentUpdates /></ProtectedRoute>}
+        />
+        <Route
+          path="/student/fees"
+          element={<ProtectedRoute><StudentFee /></ProtectedRoute>}
+        />
 
-        {/* Faculty Section */}
-        <Route path="/faculty" element={<FacultyPage />} />
-        <Route path="/faculty/students" element={<FacultyStudents />} />
-        <Route path="/faculty/news" element={<FacultyUpdates />} />
-        <Route path="/faculty/timetable" element={<FacultyTimeTable />} />
+        {/* Protected Faculty Routes */}
+        <Route
+          path="/faculty"
+          element={<ProtectedRoute><FacultyPage /></ProtectedRoute>}
+        />
+        <Route
+          path="/faculty/students"
+          element={<ProtectedRoute><FacultyStudents /></ProtectedRoute>}
+        />
+        <Route
+          path="/faculty/news"
+          element={<ProtectedRoute><FacultyUpdates /></ProtectedRoute>}
+        />
+        <Route
+          path="/faculty/timetable"
+          element={<ProtectedRoute><FacultyTimeTable /></ProtectedRoute>}
+        />
 
-        {/* Office Section */}
-        <Route path="/office" element={<OfficePage />} />
-        <Route path="/office/addstudent" element={<AddStudent />} />
-        <Route path="/office/addfaculty" element={<AddFaculty />} />
-        <Route path="/office/editstudent" element={<EditStudent />} />
-        <Route path="/office/editfaculty" element={<EditFaculty />} />
-        <Route path="/office/deletestudent" element={<DeleteStudent />} />
-        <Route path="/office/deletefaculty" element={<DeleteFaculty />} />
-        <Route path="/office/editupdates" element={<EditUpdates />} />
-        <Route path="/office/editfees" element={<EditFees />} />
+        {/* Protected Office Routes */}
+        <Route
+          path="/office"
+          element={<ProtectedRoute><OfficePage /></ProtectedRoute>}
+        />
+        <Route
+          path="/office/addstudent"
+          element={<ProtectedRoute><AddStudent /></ProtectedRoute>}
+        />
+        <Route
+          path="/office/addfaculty"
+          element={<ProtectedRoute><AddFaculty /></ProtectedRoute>}
+        />
+        <Route
+          path="/office/editstudent"
+          element={<ProtectedRoute><EditStudent /></ProtectedRoute>}
+        />
+        <Route
+          path="/office/editfaculty"
+          element={<ProtectedRoute><EditFaculty /></ProtectedRoute>}
+        />
+        <Route
+          path="/office/deletestudent"
+          element={<ProtectedRoute><DeleteStudent /></ProtectedRoute>}
+        />
+        <Route
+          path="/office/deletefaculty"
+          element={<ProtectedRoute><DeleteFaculty /></ProtectedRoute>}
+        />
+        <Route
+          path="/office/editupdates"
+          element={<ProtectedRoute><EditUpdates /></ProtectedRoute>}
+        />
+        <Route
+          path="/office/editfees"
+          element={<ProtectedRoute><EditFees /></ProtectedRoute>}
+        />
       </Routes>
     </Router>
   );

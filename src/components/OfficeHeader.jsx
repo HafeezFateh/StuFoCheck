@@ -10,15 +10,15 @@ function OfficeHeader() {
     return (
         <div>
             {/* Main header (same for all screen sizes) */}
-            <div className="bg-slate-900/20 rounded-lg mx-5 mt-5 p-4 flex items-center justify-between">
+            <div className="bg-slate-100/30 rounded-lg mx-5 mt-5 p-4 flex items-center justify-between">
                 <Link to="/" className="cursor-pointer">
-                    <h1 className="text-lg font-semibold mx-3">StuFoTech</h1>
+                    <h1 className="text-lg font-semibold text-white mx-3">StuFoTech</h1>
                 </Link>
 
                 {/* Hamburger icon for mobile only */}
                 <span
                     onClick={toggleMenu}
-                    className="mx-3 cursor-pointer material-symbols-outlined lg:hidden"
+                    className="mx-3 text-white cursor-pointer material-symbols-outlined lg:hidden"
                 >
                   <span className="lg:hidden">menu</span>
                 </span>
@@ -27,13 +27,13 @@ function OfficeHeader() {
             {/* Links section - mobile dropdown & lg visible separately */}
             {/* Mobile: dropdown under header */}
             {open && (
-                <div className="bg-slate-100 mx-5 mt-2 p-4 rounded-lg flex flex-col gap-2 lg:hidden">
+                <div className="bg-slate-100/30 mx-5 mt-2 p-4 rounded-lg flex flex-col gap-2 lg:hidden">
                     {renderLinks(location)}
                 </div>
             )}
 
             {/* Desktop: always visible below with different bg */}
-            <div className="hidden lg:flex  bg-slate-200 mx-5 p-3 mt-4 justify-center rounded-lg gap-4 flex-wrap">
+            <div className="hidden lg:flex  bg-slate-200/30 mx-5 p-3 mt-4 justify-center rounded-lg gap-4 flex-wrap">
                 {renderLinks(location)}
             </div>
         </div>
